@@ -79,3 +79,17 @@ input[type="search"] {
     display: flex;
     gap: 1.5rem;
 }
+
+/* main */
+.main > * {
+    border: 1px solid blue;
+}
+.main {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+}
+
+.projects {
+    grid-row: 1 / 3;
+}
