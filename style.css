@@ -1,0 +1,16 @@
+.dashboard > div {
+    min-width: 100px;
+    min-height: 100px;
+    
+    border: 2px solid blue; /* Border to make layout visible */
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+}
+
+.sidebar {
+    grid-row: 1 / 3;
+}
