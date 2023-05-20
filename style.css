@@ -13,6 +13,14 @@
     grid-template-rows: 1fr 4fr;
 }
 
+svg {
+    width: 25px;
+}
+
+.usericon {
+    width: 50px;
+}
+
 /* sidebar */
 
 .sidebar {
@@ -25,8 +33,15 @@
     row-gap: 3rem;
 }
 
-.heading {
+h1 {
     font-size: 1.4rem;
+}
+
+.sidebar-heading {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+    align-items: center;
 }
 
 .navigation,
@@ -35,6 +50,12 @@
     row-gap: 1rem;
 }
 
+.navigation > li,
+.help > li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 /* header */
 
 .header {
@@ -93,3 +114,4 @@ input[type="search"] {
 .projects {
     grid-row: 1 / 3;
 }
+
