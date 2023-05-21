@@ -1,13 +1,18 @@
 @import url("./reset.css");
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&display=swap');
 
 :root {
-    --main: #0ea5e9
+    --main: #0ea5e9;
+    --main-text: #ffffff;
+    --secondary: #e2e8f0;
+    --secondary-text: #475569;
+    --complementary: #fde047;
 }
 
 body {
     font-family: Roboto, sans-serif;
     font-weight: 400;
+    line-height: 1.25;
 }
 
 .dashboard > div {
@@ -32,6 +37,7 @@ svg {
 h1,
 h2,
 h3 {
+    font-size: 1.15rem;
     font-weight: 800;
 }
 
@@ -46,8 +52,8 @@ img.avatar {
     grid-row: 1 / 3;
 
     background-color: var(--main);
-    color: white;
-    fill: white;
+    color: var(--main-text);
+    fill: var(--main-text);
 
     padding: 15px;
 
@@ -60,9 +66,13 @@ h1 {
     font-size: 1.5rem;
 }
 
+.nav-link {
+    color: var(--main-text);
+    text-decoration: none;
+}
+
 .sidebar-heading,
-.navigation > li,
-.help > li {
+.nav-link {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 1rem;
@@ -108,11 +118,22 @@ input[type="search"] {
     appearance: none;
     border: none;
     border-radius: 20px;
-    background-color: #e2e8f0;
+    background-color: var(--secondary);
 
     font-size: 1rem;
 
     padding: 0 10px;
+
+    transition: 0.3s ease;
+}
+
+.search-bar > label:hover {
+    cursor: pointer;
+}
+
+.search-bar > label:hover input[type="search"],
+input[type="search"]:hover {
+    background-color: lightgrey;
 }
 
 .account {
@@ -164,7 +185,7 @@ input[type="search"] {
     border: none;
     border-radius: 25px;
 
-    color: white;
+    color: var(--main-text);
     font-size: 1rem;
     font-weight: 700;
 
@@ -172,10 +193,9 @@ input[type="search"] {
 }
 
 /* main */
-.main > * {
-    border: 1px solid blue; /* Border to make layout visible */
-}
 .main {
+    background-color: var(--secondary);
+
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 3fr minmax(300px, 1fr);
@@ -193,23 +213,53 @@ input[type="search"] {
 }
 
 .card {
-    padding: 1rem;
+    padding: 2rem;
     margin: 1rem;
 
-    border: 1px solid blue; /* Border to make layout visible */
+    background-color: var(--main-text);
+    border-radius: 10px;
+
+    display: grid;
+    align-items: start;
+
+    position: relative;
+
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+    content: "";
+
+    background-color: var(--complementary);
+    width: 10px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px 0 0 10px;
 }
 
 .card-heading {
     margin-bottom: 5px;
 }
 
+.card-content,
+.news-content,
+.account-project {
+    color: var(--secondary-text);
+}
+
 .card > .actions {
+    align-self: end;
+    
     margin-top: 1rem;
 
     display: grid;
     grid-auto-flow: column;
     justify-content: end;
-    gap: 1rem;
+    gap: 1.5rem;
+
 }
 
 .announcements {
@@ -217,7 +267,13 @@ input[type="search"] {
 }
 
 .news-cards {
-    padding: 1rem;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+
+    background-color: var(--main-text);
+    border-radius: 10px;
+
+    font-size: 14px;
 }
 
 .news-card {
@@ -229,11 +285,19 @@ input[type="search"] {
 }
 
 .news-card:not(:last-child) {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid lightgrey;
 }
 
 .trending {
     padding: 1rem;
+}
+
+.accounts-preview {
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+
+    background-color: var(--main-text);
+    border-radius: 10px;
 }
 
 .account-preview {
@@ -243,8 +307,29 @@ input[type="search"] {
     grid-template-columns: auto 1fr;
     align-items: center;
     gap: 1rem;
+
+    font-size: 14px;
 }
 
 .tag {
     margin-bottom: 5px;
+
+    font-weight: 500;
+}
+
+/* hovers */
+
+.buttons > button {
+    transition: 0.5s ease;
+}
+
+.buttons > button:hover {
+    cursor: pointer;
+    color: var(--main);
+    background-color: var(--main-text);
+    box-shadow: 0 0 5px black;
+}
+
+a:hover {
+    text-decoration: underline;
 }
