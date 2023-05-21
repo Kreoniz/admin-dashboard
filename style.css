@@ -60,6 +60,9 @@ img.avatar {
     display: grid;
     align-content: start;
     row-gap: 3rem;
+
+    position: relative;
+    z-index: 2;
 }
 
 h1 {
