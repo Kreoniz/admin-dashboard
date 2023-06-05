@@ -70,6 +70,7 @@ h1 {
 }
 
 .nav-link {
+    width: max-content;
     color: var(--main-text);
     text-decoration: none;
 }
@@ -204,6 +205,7 @@ input[type="search"]:hover {
 
     display: grid;
     grid-template-columns: 3fr minmax(300px, 1fr);
+    grid-template-rows: 1fr;
 }
 
 .projects {
